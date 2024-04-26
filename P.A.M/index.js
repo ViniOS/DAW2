@@ -1,7 +1,4 @@
 const express = require('express')
-
-const { stat } = require('fs')
-const status = require('http-status')
 const app = express()
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger_output.json')
@@ -9,6 +6,9 @@ const swaggerFile = require('./swagger_output.json')
 const category = require('./src/routes/category')
 const activity = require('./src/routes/activity')
 const user = require('./src/routes/user')
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 app.use('/category', category)
 app.use('/activity', activity)

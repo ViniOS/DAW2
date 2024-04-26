@@ -7,3 +7,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Category{
+  Id Int @id @default(autoincrement())
+  description String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  activity Activity[]
+}
+
+model User{
+  Id Int @id @default(autoincrement())
+  first_name String @db.VarChar(255)
+  last_name String @db.VarChar(255)
+  password String? @unique
+  activity Activity[]
+}
+
+model Activity{
+  Id Int @id @default(autoincrement())
+  description String?
+  dt_inicial DateTime
+  dt_final DateTime
+  category Category @relation(fields: [category_id], references: [Id])
+  category_id Int @unique
+  user User @relation(fields: [user_Id], references: [Id])
+  user_Id Int @unique
+}
+
