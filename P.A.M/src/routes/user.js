@@ -74,7 +74,7 @@ router.put('/:id', async (req,res)=>{
         })
 
         if(!user){
-            res.status(status[404]).send(`Usuario de ID:${id} não encontrado`)
+            res.status(status.NOT_FOUND).send(`Usuario de ID:${id} não encontrado`)
             return
         }
 

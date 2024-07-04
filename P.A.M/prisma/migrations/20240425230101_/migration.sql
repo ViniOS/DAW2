@@ -1,4 +1,4 @@
--- CreateTable
+ -- CreateTable
 CREATE TABLE "Category" (
     "Id" SERIAL NOT NULL,
     "description" TEXT,
