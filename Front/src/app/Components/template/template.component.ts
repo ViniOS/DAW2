@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { MatTableModule } from '@angular/material/table';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 export interface Atividade{
   Nome: String,
@@ -20,7 +21,7 @@ const DataTest: Atividade[] = [{
 @Component({
   selector: 'app-template',
   standalone: true,
-  imports: [ButtonComponent, MatTableModule],
+  imports: [ButtonComponent, MatTableModule, NavbarComponent],
   templateUrl: './template.component.html',
   styleUrl: './template.component.scss'
 })

@@ -3,17 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
+.Mybtn {
     @apply flex items-center justify-center p-2 bg-blue-500 text-white rounded hover:bg-blue-700;
 }
 
-.btn i {
+.Mybtn i {
     @apply text-xl;
 }
 
 body{
-    width: 100vh;
-    height: 100vh;
     background-color: #E342C2;
 }
 html, body { height: 100%; }
