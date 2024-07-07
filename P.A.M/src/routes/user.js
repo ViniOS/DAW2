@@ -10,7 +10,7 @@ router.get('/', async (req,res)=>{
         const user = await prisma.user.findMany()
 
         if(!user){
-            res.status(status[404]).send(`Lista não encontrada`)
+            res.status(status.NOT_FOUND).send(`Lista não encontrada`)
             return
         }
         res.status(status.OK).send(user)
@@ -53,12 +53,12 @@ router.post('/', async (req,res)=>{
                     password: password
                 }
             })
-            res.status(status['201_MESSAGE']).send(`Usuario criado ${newUser}`)
+            res.status(status.OK).send(newUser)
         }else{
-            res.status(status['406_MESSAGE']).send('Dados incorretos')
+            res.status(status.BAD_REQUEST).send('Dados incorretos')
         }
     }catch(error){
-        res.status(status['502_MESSAGE']).send(error)
+        res.status(status.BAD_REQUEST).send(error)
     }
 })
 

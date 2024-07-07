@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .Mybtn {
-    @apply flex items-center justify-center p-2 bg-blue-500 text-white rounded hover:bg-blue-700;
+    @apply flex items-center justify-center p-2 bg-purple-700 text-white rounded hover:bg-purple-900;
 }
 
 .Mybtn i {
@@ -12,7 +12,11 @@
 }
 
 body{
-    background-color: #E342C2;
+    background-color: #7500FA;
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+//#5EF7EF
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

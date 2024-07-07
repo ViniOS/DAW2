@@ -29,8 +29,8 @@ model Activity{
   dt_inicial DateTime
   dt_final DateTime
   category Category @relation(fields: [category_id], references: [Id])
-  category_id Int @unique
+  category_id Int 
   user User @relation(fields: [user_Id], references: [Id])
-  user_Id Int @unique
+  user_Id Int 
 }
 

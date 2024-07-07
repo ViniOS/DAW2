@@ -1,0 +1,42 @@
+<div class="bg-teal-400 w-full p-5">
+    <h1 class="font-bold text-center text-purple-900">Cadastro de Atividade</h1>
+    <form [formGroup]="ActivityForm" class="flex flex-col items-center gap-3">
+      <input
+        type="text"
+        placeholder="Descricao"
+        class="input input-bordered input-md w-full max-w-xs bg-#5EF7EF"
+        formControlName="descricao"
+      />
+      
+      <select
+        class="select select-bordered w-full max-w-xs"
+        formControlName="usuario"
+      >
+        <option disabled selected>Usuario</option>
+        <!-- Supondo que você queira adicionar os usuários também aqui -->
+        <option *ngFor="let user of userData | async" [value]="user.id">{{ user.first_name }}</option>
+      </select>
+      
+      <select
+        class="select select-bordered w-full max-w-xs"
+        formControlName="categoria"
+      >
+        <option disabled selected>Categoria</option>
+        <option *ngFor="let category of categoryData | async" [value]="category.id" >{{ category.description }}</option>
+      </select>
+  
+      <mat-form-field>
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate formControlName="dt_inicial" placeholder="Start date">
+            <input matEndDate formControlName="dt_final" placeholder="End date">
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      
+      <app-button text="Cadastrar" class="mb-3" (Click)="onSubmit()"></app-button>
+    </form>
+  </div>
+  

@@ -1,0 +1,26 @@
+<section id="form-section" class="flex items-center justify-center h-full">
+    <div class="bg-teal-400 rounded-md w-1/3 p-5"> 
+        <h1 class="font-bold text-center text-purple-900">Cadastro de usuários</h1>
+        <form [formGroup]="UserForms" class="flex flex-col items-center gap-3">
+            <input
+                type="text"
+                placeholder="Nome"
+                class="input input-bordered input-md w-full max-w-xs bg-#5EF7EF"
+                formControlName="nome"
+            />
+            <input
+                type="text"
+                placeholder="Sobrenome"
+                class="input input-bordered input-md w-full max-w-xs bg-#FFFFFF"
+                formControlName="sobrenome"
+            />
+            <input
+                type="text"
+                placeholder="Senha"
+                class="input input-bordered input-md w-full max-w-xs bg-#995EF7"
+                formControlName="senha"
+            />
+            <app-button text="Cadastrar" class="mb-3" (Click)="onSubmit()"></app-button>
+        </form>
+    </div>
+</section>
